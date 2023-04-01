@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="Definitions_10kfb0f" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.8.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.18.0">
+  <decision id="decideEstado" name="Decide Estado">
+    <decisionTable id="DecisionTable_1izknfl" hitPolicy="FIRST">
+      <input id="Input_1" label="Factor" biodi:width="372">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text>factor</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0iw1qlp">
+          <text>"CO","NO2","H2S","O3","Temperatura","UV"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_1amva5u" label="Cantidad" biodi:width="245">
+        <inputExpression id="LiteralExpression_0x51jvd" typeRef="double">
+          <text>cantidad</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0ir76tz" label="Estado" name="estado" typeRef="string" biodi:width="244">
+        <outputValues id="UnaryTests_1bz5w2r">
+          <text>"OK","Medio","Alto","Error"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_1x5nkoa">
+        <inputEntry id="UnaryTests_0krtk93">
+          <text>"CO"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ii7fwe">
+          <text>[0..100]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05y4vnt">
+          <text>"OK"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_06kbtxn">
+        <inputEntry id="UnaryTests_1esval4">
+          <text>"CO"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pldbrr">
+          <text>]100..200]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1gjw8bv">
+          <text>"Medio"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1hv0mv5">
+        <inputEntry id="UnaryTests_1x22m5d">
+          <text>"CO"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0snsxvj">
+          <text>&gt; 200</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ljcrx2">
+          <text>"Alto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0hdejs5">
+        <inputEntry id="UnaryTests_08pwnty">
+          <text>"CO"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gwih0m">
+          <text>&lt; 0</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_16ltno9">
+          <text>"Error"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_16s1x6p">
+        <inputEntry id="UnaryTests_15dc32t">
+          <text>"NO2"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wcvo5f">
+          <text>[0..100]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0q26dql">
+          <text>"OK"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0b9u9bu">
+        <inputEntry id="UnaryTests_19r3o3w">
+          <text>"NO2"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pyv3qf">
+          <text>]100..200]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1b8xute">
+          <text>"Medio"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0lamx7b">
+        <inputEntry id="UnaryTests_0bpueu5">
+          <text>"NO2"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1c9bzy4">
+          <text>&gt; 200</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0kf4gwi">
+          <text>"Alto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0jc57ia">
+        <inputEntry id="UnaryTests_08rljst">
+          <text>"NO2"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pylkqu">
+          <text>&lt; 0</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1acivkm">
+          <text>"Error"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_08kvlmr">
+        <inputEntry id="UnaryTests_1dle1i9">
+          <text>"H2S"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15oxf0y">
+          <text>[0..100]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_10lir7k">
+          <text>"OK"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1p4d8nt">
+        <inputEntry id="UnaryTests_01990hx">
+          <text>"H2S"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1swfof1">
+          <text>]100..200]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0w2q5q7">
+          <text>"Medio"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0p2ql8y">
+        <inputEntry id="UnaryTests_03gft3h">
+          <text>"H2S"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19ocuw6">
+          <text>&gt; 200</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0d9ygmr">
+          <text>"Alto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_07u0ofy">
+        <inputEntry id="UnaryTests_0qx4xwc">
+          <text>"H2S"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05ba4id">
+          <text>&lt; 0</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1knpz9j">
+          <text>"Error"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ghu3ed">
+        <inputEntry id="UnaryTests_1a0rpgn">
+          <text>"O3"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0iwvd3d">
+          <text>[0..100]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_06n6a26">
+          <text>"OK"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1bfk1bx">
+        <inputEntry id="UnaryTests_102ckdf">
+          <text>"O3"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1d5tu64">
+          <text>]100..200]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0382okl">
+          <text>"Medio"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1a83ph8">
+        <inputEntry id="UnaryTests_0qg25su">
+          <text>"O3"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15aqwce">
+          <text>&gt; 200</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0f2hh18">
+          <text>"Alto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1f2nf8y">
+        <inputEntry id="UnaryTests_1csb1jm">
+          <text>"O3"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lpb43s">
+          <text>&lt; 0</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_17bdysp">
+          <text>"Error"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_15m2bqx">
+        <inputEntry id="UnaryTests_0kwofm7">
+          <text>"Temperatura"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_026isxh">
+          <text>[0..100]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1502k2b">
+          <text>"OK"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_17jqplf">
+        <inputEntry id="UnaryTests_01fce8r">
+          <text>"Temperatura"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09fodu2">
+          <text>]100..200]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0hstura">
+          <text>"Medio"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0bszjo8">
+        <inputEntry id="UnaryTests_1g2zw9l">
+          <text>"Temperatura"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qmdbhx">
+          <text>&gt; 200</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1dd7ff4">
+          <text>"Alto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0sp5si6">
+        <inputEntry id="UnaryTests_1for2l6">
+          <text>"Temperatura"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0v5qvfq">
+          <text>&lt; 0</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1pdtf2k">
+          <text>"Error"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0vu630x">
+        <inputEntry id="UnaryTests_131irzh">
+          <text>"UV"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vg0xxa">
+          <text>[0..100]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0t8f090">
+          <text>"OK"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0hc6ula">
+        <inputEntry id="UnaryTests_1l862tr">
+          <text>"UV"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rug3xj">
+          <text>]100..200]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1n48ycs">
+          <text>"Medio"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_15mm7e5">
+        <inputEntry id="UnaryTests_0r7087r">
+          <text>"UV"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00gb2ey">
+          <text>&gt; 200</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_19rr504">
+          <text>"Alto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1fjr9t5">
+        <inputEntry id="UnaryTests_1ew7g5x">
+          <text>"UV"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1q7q6bo">
+          <text>&lt; 0</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0tcspag">
+          <text>"Error"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="decideEstado">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
